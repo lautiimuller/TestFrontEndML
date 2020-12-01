@@ -1,0 +1,48 @@
+body{
+    background-color: rgba(0,0,0,.1);
+}
+.products-container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: space-between;
+    margin: 3% 25% 5% 25%;
+    width: 50%;
+}
+
+img{
+    width: 180px;
+    height: 180px;
+    border-radius: 4px;
+}
+
+.single-product{
+    display: flex;
+    flex-direction: row;
+}
+
+.ubicacion{
+    text-align: end;
+    margin-right: 12px;
+    margin-top: 14px;
+}
+
+.label-price{
+    width: 50%;
+}
+
+.h4-price{
+    padding-bottom: 32px;
+    padding-top: 14px;
+}
+.products-column{
+    display: flex;
+    flex-direction: column;
+}
+.ubication-products{
+    margin: 16px 0% 0% 16px;
+}
+
+.link-class{
+    color:black;
+}
