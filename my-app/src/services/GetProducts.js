@@ -4,6 +4,20 @@ export async function getProductos(query){
     return responseJson
 }
 
-export default{
-    getProductos
+export async function getProductsById(id){
+    const response = await fetch(`https://api.mercadolibre.com/items/${id}`)
+    const responseJson = await response.json()
+    return responseJson
 }
+
+export async function getProductsByDescription(id, description){
+    const response = await fetch(`https://api.mercadolibre.com/items/${id}/${description}`)
+    const responseJson = await response.json()
+    return responseJson
+}
+
+export default{
+    getProductsById, getProductos, getProductsByDescription
+}
+
+

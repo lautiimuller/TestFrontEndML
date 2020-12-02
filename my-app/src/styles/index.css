@@ -6,16 +6,22 @@ body{
     flex-direction: column;
     background-color: white;
     justify-content: space-between;
-    margin: 3% 25% 5% 25%;
+    margin: 0 25% 2% 25%;
     width: 50%;
 }
 
-img{
+.img_search{
     width: 180px;
     height: 180px;
     border-radius: 4px;
 }
-
+.categories{
+    color:grey;
+    
+}
+.div-categories{
+    margin: 14px 25% 14px 25%;
+}
 .single-product{
     display: flex;
     flex-direction: row;
