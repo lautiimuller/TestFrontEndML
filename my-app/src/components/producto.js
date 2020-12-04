@@ -23,28 +23,32 @@ class Producto extends React.Component {
         const product = (this.props) 
         const GoToProduct = this.state.RedirectProductDetail
         if(GoToProduct){
-            <Redirect push to={{pathname:`/ProductDetails/${this.props.id}`}} />
+            return (
+                <div>
+                     <Redirect push to={{pathname:`/ProductDetails/${this.props.id}`, state: {categories: this.props.categories} }} />
+                </div>
+            )
         }
         return(
             <div>
                 <div className="single-product">
                     <div>
-                        <Link to={{pathname:`/ProductDetails/${this.props.id}`}}>
-                        <img className="img_search" src={product.foto} alt={product.titulo} />
-                        </Link>
+                        <a onClick={this.GoToProductDetails}>
+                            <img className="img_search" src={product.picture} alt={product.title} />
+                        </a>
                     </div>
                     <div className="label-price" > 
-                        <h4 className="h4-price">${product.precio}
+                        <h4 className="h4-price">${product.price.amount}
                             {
                                 product.freeShipping ?
                                 <span>&nbsp; <img src={img_shipping} /></span>
                                 :''
                             }
                         </h4>
-                        <label>{product.titulo}</label>
+                        <label>{product.title}</label>
                     </div>
                     <div className="ubicacion">        
-                        <label>{product.ubicacion}</label>
+                        <label>{product.location}</label>
                     </div>
                 </div>
                 <hr/>
@@ -53,15 +57,4 @@ class Producto extends React.Component {
     }
 
 }
-
-Producto.propTypes = {
-    id: PropTypes.number.isRequired,
-        
-    foto: PropTypes.string.isRequired,
-    ubicacion: PropTypes.string.isRequired,
-    precio: PropTypes.number.isRequired,
-    titulo:PropTypes.string.isRequired,
-    freeShipping:PropTypes.bool.isRequired
-}
-
  export default Producto
