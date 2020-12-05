@@ -1,6 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
-import { getProduct} from '../services/GetProducts'
+import { categorySeparator, getProduct} from '../services/GetProducts'
 import '../styles/productDetails.css'
 
 
@@ -10,33 +9,36 @@ class ProductDetails extends React.Component {
 
         this.state = {
             item:{},
+            categories: []
         }
-        
+        if (this.props.categories != undefined) {
+              this.state.categories = this.props.categories.categories
+        }
+      
         this.handleProductDetails = this.handleProductDetails.bind(this)
     }
 
     handleProductDetails(){
         let pathname = window.location.pathname
         const id = pathname.split('/')[2]
-
+        let newCategories =  categorySeparator(this.state.categories)
         getProduct(id)
             .then(result => this.setState({
                 item: result.item,
-                
-            }))   
+                categories: newCategories
+            }))    
     }
 
-    componentDidMount() {
+    componentDidMount() {  
         this.handleProductDetails();       
     }
     render() {
         const {item} = this.state;
-        const {categories} = this.props.location.state;
         return (
             <div className="container first-box"> 
                 <div className="col-12">
                     <div className="spaces-categories">
-                        <span className="name categories-letters"></span>
+                        <span className="name categories-letters">{this.state.categories}</span>
                     </div>
 
                     <div className="row container-details">

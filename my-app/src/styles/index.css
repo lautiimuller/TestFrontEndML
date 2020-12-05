@@ -17,6 +17,7 @@ body{
 }
 .categories{
     color:grey;
+    font-size: 14px;
     
 }
 .div-categories{
@@ -52,4 +53,37 @@ body{
 .link-class{
     color:black;
 }
+.div-busqueda{
+    width: 50%;
+    margin-left: 20%;
+}
+.cuadro-busqueda{
+border-radius: 0%;
+background-color: #fff;
+border: none;
+width: 100%;
+box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+height: 39px;
+}
 
+.nav-busqueda{
+    background-color: #FFE600;}
+.nav-logo{
+    background-image: url('../styles/images/Logo_ML.png');
+    background-repeat: no-repeat;
+    height: 38px;
+    top: 11px;
+    width: 70px;
+}
+.btn-busqueda{
+    background-color: transparent;
+    border:0;
+}
+
+.img_search{
+    position: inherit;
+    right: 35px;
+}
+.input-group-append{
+    margin-left: -40px;
+}

@@ -4,7 +4,7 @@ import './styles/index.css'
 import App from './components/App'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ProductDetails from './components/ProductDetails';
-import Producto from './components/producto';
+import Producto from './components/Products';
 
 const routing = (
     <BrowserRouter>

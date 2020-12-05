@@ -1,9 +1,9 @@
 import React from 'react'
-import Producto from '../components/producto.js'
-import {getProducts, getProductsById, getFilters} from '../services/GetProducts.js'
+import Producto from './Products.js'
+import {getProducts} from '../services/GetProducts.js'
 import Search from '../components/Search.js'
-import { BrowserRouter as Router,  Switch, Route, Link, useParams} from 'react-router-dom'
-import DetailsProduct from './DetailsProduct.js'
+import { BrowserRouter as Router,  Switch, Route} from 'react-router-dom'
+
 import ProductDetails from './ProductDetails.js'
 
 
@@ -63,8 +63,7 @@ class App extends React.Component {
                             </div>
                         </section>
                     </Route>
-                    <Route  path="/ProductDetails/:id" >
-                       <ProductDetails/>
+                    <Route  path="/ProductDetails/:id" component={() => <ProductDetails categories={this.props.location.state}/>} >
                     </Route>        
                 </Switch>
             </React.Fragment> 

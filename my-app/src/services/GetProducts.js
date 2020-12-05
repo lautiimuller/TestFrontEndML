@@ -131,8 +131,16 @@ function getProductDescription(id) {
         .then(responseJson => responseJson.data.plain_text)
 }
 
-
+function categorySeparator(categories){
+    let newCategories = []
+    categories.forEach(element => {
+        newCategories.push(element)
+        newCategories.push(' > ')
+    });
+    return newCategories
+}
 module.exports.getProduct = getProduct;
 module.exports.getProductDescription = getProductDescription;
 module.exports.getProducts = getProducts;
+module.exports.categorySeparator = categorySeparator;
 
